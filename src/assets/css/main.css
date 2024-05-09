@@ -66,6 +66,14 @@ Text Domain:
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+   .avt-movie{
+    height: 300px;
+   }
+
+
+
+
 html {
   color: #222;
   font-size: 1em;
@@ -754,7 +762,7 @@ p:last-child {
     margin-top: -10px;
   }
   h5 {
-    font-size: 24px;
+    font-size: 20px;
     margin-top: -8px;
   }
   h6 {

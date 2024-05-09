@@ -1,16 +1,19 @@
-export default function index() {
+import { Link } from "react-router-dom";
+
+
+export default function Header() {
   return (
     <header className="header-section">
       <div className="container">
         <div className="header-wrapper">
           <div className="logo">
-            <a href="index.html">
+            <Link to={""}>
               <img src="./images/logo/logo.png" alt="logo" />
-            </a>
+            </Link>
           </div>
           <ul className="menu">
             <li>
-              <a href="#0" className="active">Home</a>
+            <Link to={""} className="active">Home</Link>
               <ul className="submenu">
                 <li>
                   <a href="#0" className="active">Home One</a>
@@ -121,14 +124,9 @@ export default function index() {
               <a href="contact.html">contact</a>
             </li>
             <li className="header-button pr-0">
-              <a href="sign-up.html">join us</a>
+              <Link to={"login"}>Login</Link>
             </li>
           </ul>
-          <div className="header-bar d-lg-none">
-            <span />
-            <span />
-            <span />
-          </div>
         </div>
       </div>
     </header>

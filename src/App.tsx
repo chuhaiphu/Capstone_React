@@ -7,13 +7,18 @@ import './assets/css/nice-select.css'
 import './assets/css/odometer.css'
 import './assets/css/owl.carousel.min.css'
 import './assets/css/owl.theme.default.min.css'
-import Header from './pages/Home/_components/Header'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import { BrowserRouter, Routes } from "react-router-dom"
+import renderRoutes from './routes'
+
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {renderRoutes()}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

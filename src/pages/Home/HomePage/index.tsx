@@ -1,7 +1,15 @@
-import React from 'react'
 
-export default function index() {
+import Header from '../_components/Header';
+import Footer from '../_components/Footer';
+import { Outlet } from 'react-router-dom';
+
+
+export default function HomeTemplate() {
   return (
-    <div>index</div>
+    <div>
+      <Header/>
+      <Outlet/>
+      <Footer/>
+    </div>
   )
 }
