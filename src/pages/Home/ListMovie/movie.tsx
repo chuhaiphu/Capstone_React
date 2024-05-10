@@ -22,13 +22,13 @@ export default function Moviecomponent(props: Props) {
                     <ul className="movie-rating-percent">
                         <li>
                             <div className="thumb">
-                                <img src="./../../../../public/images/movie/tomato.png" alt="icon" />
+                                <img src="./images/movie/tomato.png" alt="icon" />
                             </div>
                             <span className="content">88%</span>
                         </li>
                         <li>
                             <div className="thumb">
-                                <img src="./../../../../public/images/movie/cake.png" alt="icon" />
+                                <img src="./images/movie/cake.png" alt="icon" />
                             </div>
                             <span className="content">88%</span>
                         </li>

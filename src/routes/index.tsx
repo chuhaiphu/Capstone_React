@@ -40,7 +40,7 @@ const routes: TypeRoute[] = [
         element: login,
     },
     {
-        path: "login/sign-up",
+        path: "sign-up",
         element: signupPage,
     }
 ]

@@ -3,7 +3,7 @@ import * as yup from "yup";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { actFetchUserLogin } from "./duck/action";
 
@@ -96,7 +96,7 @@ export default function Login() {
               </div>
             </form>
             <div className="option">
-              Don't have an account? <a href="sign-up.html">sign up now</a>
+              Don't have an account? <Link to={"sign-up"}>sign up now</Link>
             </div>
           </div>
         </div>
