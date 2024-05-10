@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export default function signupPage() {
   return (
@@ -33,7 +33,7 @@ export default function signupPage() {
             </div>
           </form>
           <div className="option">
-            Already have an account? <NavLink to={"login"}>Login</NavLink>
+            Already have an account? <Link to={"/login"}>Login</Link>
           </div>
         </div>
       </div>

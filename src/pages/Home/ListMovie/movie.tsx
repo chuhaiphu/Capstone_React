@@ -5,10 +5,10 @@ type Props = {
     movie: Movie
 }
 
-export default function Moviecomponent(props: Props) {
+export default function MovieComponent(props: Props) {
     const { movie } = props;
     return (
-        <div className=" cart-movie col-md-3 mb-30-none justify-content-center">
+        <div className=" cart-movie col-md-4 justify-content-center">
             <div className="movie-grid">
                 <div className="movie-thumb c-thumb">
                     <Link to = {`/detail/${movie.maPhim} `}>
@@ -22,13 +22,13 @@ export default function Moviecomponent(props: Props) {
                     <ul className="movie-rating-percent">
                         <li>
                             <div className="thumb">
-                                <img src="./../../../../public/images/movie/tomato.png" alt="icon" />
+                                <img src="./images/movie/tomato.png" alt="icon" />
                             </div>
                             <span className="content">88%</span>
                         </li>
                         <li>
                             <div className="thumb">
-                                <img src="./../../../../public/images/movie/cake.png" alt="icon" />
+                                <img src="./images/movie/cake.png" alt="icon" />
                             </div>
                             <span className="content">88%</span>
                         </li>

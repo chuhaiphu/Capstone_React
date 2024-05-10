@@ -6,7 +6,7 @@ export default function Footer() {
   <footer className="footer-section mt-5">
     <div className="newslater-section padding-bottom">
       <div className="container">
-        <div className="newslater-container bg_img" data-background="./img/newslater-bg01.jpg" style={{backgroundImage: 'url("./img/newslater-bg01.jpg")'}}>
+        <div className="newslater-container bg_img" data-background="../../../public/images/newslater-bg01.jpg" style={{backgroundImage: 'url("../../../public/images/newslater-bg01.jpg")'}}>
           <div className="newslater-wrapper">
             <h5 className="cate">subscribe to Boleto </h5>
             <h3 className="title">to get exclusive benifits</h3>

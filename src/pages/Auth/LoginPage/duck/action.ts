@@ -1,5 +1,5 @@
-import { Action } from "../../../store/types"
-import api from "../../../utils/apiUtils"
+import { Action } from "../../../../store/types"
+import api from "../../../../utils/apiUtils"
 import * as ActionType from "./constants"
 
 

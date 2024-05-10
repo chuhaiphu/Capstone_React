@@ -1,11 +1,11 @@
 import { Route } from "react-router-dom";
 import HomeTemplate from "../pages/Home/HomePage";
 import DetailPage from "../pages/Home/DetailPage";
-import adminPage from "../pages/AdminPage";
-import dashboard from "../pages/AdminPage/Dashboard";
-import addUserPage from "../pages/AdminPage/AddUserPage";
-import login from "../pages/LoginPage";
-import signupPage from "../pages/SignupPage";
+import adminPage from "../pages/Admin";
+import dashboard from "../pages/Admin/Dashboard";
+import addUserPage from "../pages/Admin/AddUserPage";
+import login from "../pages/Auth/LoginPage";
+import signupPage from "../pages/Auth/SignupPage";
 import listmovie from "../pages/Home/ListMovie";
 
 
@@ -40,7 +40,7 @@ const routes: TypeRoute[] = [
         element: login,
     },
     {
-        path: "login/sign-up",
+        path: "sign-up",
         element: signupPage,
     }
 ]

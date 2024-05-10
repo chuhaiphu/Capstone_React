@@ -13,7 +13,7 @@ export default function Header() {
           </div>
           <ul className="menu">
             <li>
-            <Link to={""} className="active">Home</Link>
+              <Link to={""} className="active">Home</Link>
               <ul className="submenu">
                 <li>
                   <a href="#0" className="active">Home One</a>
@@ -53,61 +53,7 @@ export default function Header() {
               </ul>
             </li>
             <li>
-              <a href="#0">events</a>
-              <ul className="submenu">
-                <li>
-                  <a href="events.html">Events</a>
-                </li>
-                <li>
-                  <a href="event-details.html">Event Details</a>
-                </li>
-                <li>
-                  <a href="event-speaker.html">Event Speaker</a>
-                </li>
-                <li>
-                  <a href="event-ticket.html">Event Ticket</a>
-                </li>
-                <li>
-                  <a href="event-checkout.html">Event Checkout</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#0">sports</a>
-              <ul className="submenu">
-                <li>
-                  <a href="sports.html">Sports</a>
-                </li>
-                <li>
-                  <a href="sport-details.html">Sport Details</a>
-                </li>
-                <li>
-                  <a href="sports-ticket.html">Sport Ticket</a>
-                </li>
-                <li>
-                  <a href="sports-checkout.html">Sport Checkout</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#0">pages</a>
-              <ul className="submenu">
-                <li>
-                  <a href="about.html">About Us</a>
-                </li>
-                <li>
-                  <a href="apps-download.html">Apps Download</a>
-                </li>
-                <li>
-                  <a href="sign-in.html">Sign In</a>
-                </li>
-                <li>
-                  <a href="sign-up.html">Sign Up</a>
-                </li>
-                <li>
-                  <a href="404.html">404</a>
-                </li>
-              </ul>
+              <a href="#0">About Us</a>
             </li>
             <li>
               <a href="#0">blog</a>
@@ -120,13 +66,15 @@ export default function Header() {
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="contact.html">contact</a>
-            </li>
             <li className="header-button pr-0">
-              <Link to={"login"}>Login</Link>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
+          <div className="header-bar d-lg-none">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </header>

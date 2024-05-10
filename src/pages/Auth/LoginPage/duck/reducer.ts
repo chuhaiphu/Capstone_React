@@ -1,4 +1,4 @@
-import { Action, AppStateDetails, CurrentUser } from "../../../store/types";
+import { Action, AppStateDetails, CurrentUser } from "../../../../store/types";
 import * as ActionType from "./constants"
 
 
