@@ -7,7 +7,7 @@ import { RootState } from "../../../../store";
 import { actUserLogout } from "../../../Auth/LoginPage/duck/action";
 
 export default function Header() {
-function classNames(...classes: string[]) {
+  function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
   }
 
@@ -17,6 +17,7 @@ function classNames(...classes: string[]) {
   const localUser = localStorage.getItem("user");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   const dispatch = useDispatch();
   const handleSignOut = () => {
@@ -34,9 +35,9 @@ function classNames(...classes: string[]) {
   }, [userData]);
 
   useEffect(() => {
-    if(localUser){
+    if (localUser) {
       setIsLoggedIn(true);
-    }else{
+    } else {
       setIsLoggedIn(false);
     }
   }, [localUser]);
@@ -130,7 +131,7 @@ function classNames(...classes: string[]) {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          to="#"
+                          to={"/profile"}
                           className={classNames(
                             active ? 'bg-indigo-500 text-white' : 'text-gray-700',
                             'block px-4 py-2 text-sm transition-colors duration-300'
@@ -184,7 +185,6 @@ function classNames(...classes: string[]) {
         </div>
       </div>
     </header>
-
 
   )
 }

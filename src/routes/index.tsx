@@ -7,8 +7,7 @@ import addUserPage from "../pages/Admin/AddUserPage";
 import login from "../pages/Auth/LoginPage";
 import signupPage from "../pages/Auth/SignupPage";
 import listmovie from "../pages/Home/ListMovie";
-
-
+import ProfilePage from "../pages/Home/Profile";
 
 
 type TypeRoute = {
@@ -24,6 +23,7 @@ const routes: TypeRoute[] = [
         element: HomePage,
         nested:[
             {path: "detail/:id", element: DetailPage},
+            {path: "profile", element: ProfilePage},
             {path: "", element: listmovie},
         ]
     },
