@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom";
-import HomeTemplate from "../pages/Home/HomePage";
+import HomePage from "../pages/Home";
 import DetailPage from "../pages/Home/DetailPage";
-import adminPage from "../pages/Admin";
-import dashboard from "../pages/Admin/Dashboard";
+import AdminPage from "../pages/Admin";
+import Dashboard from "../pages/Admin/Dashboard";
 import addUserPage from "../pages/Admin/AddUserPage";
 import login from "../pages/Auth/LoginPage";
 import signupPage from "../pages/Auth/SignupPage";
@@ -21,7 +21,7 @@ const routes: TypeRoute[] = [
     {
 
         path: "",
-        element: HomeTemplate,
+        element: HomePage,
         nested:[
             {path: "detail/:id", element: DetailPage},
             {path: "", element: listmovie},
@@ -29,9 +29,9 @@ const routes: TypeRoute[] = [
     },
     {
         path: "admin",
-        element: adminPage,
+        element: AdminPage,
         nested: [
-            {path: "dashboard", element: dashboard},
+            {path: "dashboard", element: Dashboard},
             {path: "add-user", element: addUserPage}
         ]
     },

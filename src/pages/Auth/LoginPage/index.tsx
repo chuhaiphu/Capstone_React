@@ -4,43 +4,42 @@ import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { actFetchUserLogin } from "./duck/action";
+import { yupResolver } from "@hookform/resolvers/yup";
 
+const schema = yup.object({
+  taiKhoan: yup.string().required("Vui lòng nhập tài khoản"),
+  matKhau: yup.string().required("Vui lòng nhập mật khẩu"),
+});
 
 export default function Login() {
 
   const dispatch: any = useDispatch();
-
   const { loading, data, error } = useSelector(
-    (state: RootState) => state.userReducer);
-
+    (state: RootState) => state.userReducer
+  );
+  
   const navigate = useNavigate();
-
-  const form = useForm({
+  const { register, handleSubmit, formState } = useForm<any>({
     defaultValues: { taiKhoan: "", matKhau: "" },
+    resolver: yupResolver(schema),
+    criteriaMode: "all",
   });
 
-  const userName = form.register("taiKhoan");
-  const password = form.register("matKhau");
+  useEffect(() => {
+    console.log("errors", formState.errors);
+  }, [formState]);
 
-  useEffect(() => { }, [form.formState]);
-
-  const onSubmit =
-    (formValue: any) => {
-      dispatch(actFetchUserLogin(formValue))
-    };
+  const onSubmit = (formValues: any) => {
+    dispatch(actFetchUserLogin(formValues));
+  };
 
   useEffect(() => {
     if (data) {
-      if (data.maLoaiNguoiDung === "QuanTri") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/")
-      }
+      navigate("/");
     }
-  }, [data]);
-
+  }, [data, navigate]);  
 
   return (
     <section className="account-section bg_img">
@@ -51,7 +50,7 @@ export default function Login() {
               <span className="cate">hello</span>
               <h2 className="title">welcome back</h2>
             </div>
-            <form className="account-form" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="account-form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                 <label htmlFor="email2">Email<span>*</span></label>
                 <input
@@ -59,12 +58,11 @@ export default function Login() {
                   placeholder="Enter Your Email"
                   id="email2"
                   required
-                  {...form.register("taiKhoan")}
-                  onChange={userName.onChange}
+                  {...register("taiKhoan")}
                 />
-                {form.formState.errors.taiKhoan?.message &&
+                {formState.errors.taiKhoan?.message &&
                   <small className="text-danger">
-                    {form.formState.errors.taiKhoan?.message as any}
+                    {formState.errors.taiKhoan?.message as any}
                   </small>
                 }
               </div>
@@ -75,13 +73,12 @@ export default function Login() {
                   placeholder="Password"
                   id="pass3"
                   required
-                  {...form.register("matKhau")}
-                  onChange={password.onChange}
+                  {...register("matKhau")}
                 />
 
-                {form.formState.errors.matKhau?.message &&
+                {formState.errors.matKhau?.message &&
                   <small className="text-danger">
-                    {form.formState.errors.matKhau?.message as any}
+                    {formState.errors.matKhau?.message as any}
                   </small>
                 }
               </div>

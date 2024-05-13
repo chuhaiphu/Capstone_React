@@ -7,7 +7,7 @@ export const actFetchUserLogin = (user: {
     taiKhoan: string,
     matKhau: string
 }) => {
-    return (dispatch: any) => {  
+    return (dispatch: any) => {
         dispatch(actUserLoginRequest())
 
         //CALL API
@@ -40,5 +40,11 @@ const actUserLoginFailed = (error: any): Action => {
     return {
         type: ActionType.USER_LOGIN_FAILED,
         payload: error,
+    }
+}
+
+export const actUserLogout = (): Action => {
+    return {
+        type: ActionType.USER_LOGOUT,
     }
 }
