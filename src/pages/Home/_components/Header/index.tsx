@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Fragment } from 'react'
 import { Button, Menu, Transition } from '@headlessui/react'
 import { useDispatch, useSelector } from "react-redux";
@@ -14,12 +14,11 @@ function classNames(...classes: string[]) {
   const { data: userData } = useSelector(
     (state: RootState) => state.userReducer
   );
+  const localUser = localStorage.getItem("user");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const dispatch = useDispatch();
-  // const location = useLocation();
-
   const handleSignOut = () => {
     localStorage.clear();
     dispatch(actUserLogout());
@@ -33,6 +32,14 @@ function classNames(...classes: string[]) {
       setIsLoggedIn(false);
     }
   }, [userData]);
+
+  useEffect(() => {
+    if(localUser){
+      setIsLoggedIn(true);
+    }else{
+      setIsLoggedIn(false);
+    }
+  }, [localUser]);
 
   return (
     <header className="header-section">

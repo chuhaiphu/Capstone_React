@@ -19,6 +19,7 @@ export default function Login() {
   const { loading, data, error } = useSelector(
     (state: RootState) => state.userReducer
   );
+  const localUser = localStorage.getItem("user");
   
   const navigate = useNavigate();
   const { register, handleSubmit, formState } = useForm<any>({
@@ -40,6 +41,12 @@ export default function Login() {
       navigate("/");
     }
   }, [data, navigate]);  
+
+  useEffect(() => {
+    if(localUser){
+      navigate("/");
+    }
+  }, [localUser, navigate]);
 
   return (
     <section className="account-section bg_img">
