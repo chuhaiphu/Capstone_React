@@ -81,3 +81,28 @@ export interface CurrentUser {
     maLoaiNguoiDung: string;
     accessToken: string;
 }
+export type Datve = any
+// export type ThongTinPhim =
+//  {
+//     maLichChieu: string,
+//     tenCumRap : string,
+//     tenRap : string,
+//     diaChi : string,
+//     tenPhim: string,
+//     hinhAnh : string,
+//     ngayChieu: string,
+//     gioChieu : string,
+// }
+
+// export type DanhSachVe = [
+//  {
+//     maGhe: string;
+//     tenGhe : string;
+//     maRap : string;
+//     loaiGhe: string;
+//     stt :string;
+//     giaVe:string;
+//     daDat:string;
+//     taiKhoanNguoiDat: string
+// }
+// ]

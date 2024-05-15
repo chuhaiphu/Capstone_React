@@ -8,6 +8,7 @@ import login from "../pages/Auth/LoginPage";
 import signupPage from "../pages/Auth/SignupPage";
 import listmovie from "../pages/Home/ListMovie";
 import ProfilePage from "../pages/Home/Profile";
+import SeatBooking from "../pages/Home/Seat-Booking";
 
 
 type TypeRoute = {
@@ -25,6 +26,7 @@ const routes: TypeRoute[] = [
             {path: "detail/:id", element: DetailPage},
             {path: "profile", element: ProfilePage},
             {path: "", element: listmovie},
+            {path: "seat-booking/:id", element: SeatBooking},
         ]
     },
     {
