@@ -5,6 +5,7 @@ import { RootState } from '../../../store';
 import { actFetchMovieDetail } from './duck/action';
 import dayjs from 'dayjs';
 import { Button, Col, Nav, Row, Tab } from "react-bootstrap";
+import api from '../../../utils/apiUtils';
 
 
 export default function DetailMovie() {
@@ -23,11 +24,12 @@ export default function DetailMovie() {
     }
   }, [id]);
 
+
   const cinemaSystems = data?.heThongRapChieu || [];
 
   if (loading) return <p>Loadinggg...</p>
 
-  const datve = () => { navigate(`/seat-booking/${data?.maPhim}`)}
+  const datve = (maLichChieu:string) => { navigate(`/seat-booking/${maLichChieu}`)}
 
   return (
     <div className=' container  '>
@@ -92,7 +94,7 @@ export default function DetailMovie() {
                               return (
                                 <Col sm={2}>
                                   
-                                    <Button onClick={datve}
+                                    <Button onClick={() => datve(item.maLichChieu)}
                                       variant="primary"
                                       key={`lich-chieu-${index}`}
                                       className="mb-3"
