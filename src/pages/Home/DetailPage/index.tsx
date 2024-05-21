@@ -27,7 +27,7 @@ export default function DetailMovie() {
 
   if (loading) return <p>Loadinggg...</p>
 
-  const datve = () => { navigate(`/seat-booking/${data?.maPhim}`)}
+  const datve = (maLichChieu:string) => { navigate(`/seat-booking/${maLichChieu}`)}
 
   return (
     <div className=' container  '>
@@ -88,11 +88,11 @@ export default function DetailMovie() {
                         <div>
                           {item.tenCumRap}
                           <Row>
-                            {item.lichChieuPhim.map((item, index) => {
+                            {item.lichChieuPhim.map((item , index) => {
                               return (
                                 <Col sm={2}>
                                   
-                                    <Button onClick={datve}
+                                    <Button onClick={() => datve(item.maLichChieu)}
                                       variant="primary"
                                       key={`lich-chieu-${index}`}
                                       className="mb-3"

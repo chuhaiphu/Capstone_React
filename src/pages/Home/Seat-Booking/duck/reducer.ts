@@ -1,8 +1,8 @@
 import { error } from "console";
-import { Action, AppState, Datve } from "../../../../store/types";
+import { Action, DatveSeat, AppStateSeat } from "../../../../store/types";
 import * as ActionType from "./constants";
 
-const initalState:AppState<Datve> = {
+const initalState:AppStateSeat<DatveSeat> = {
     loading : false,
     data : null,
     error: null,

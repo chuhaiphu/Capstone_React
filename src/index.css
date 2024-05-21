@@ -1,3 +1,107 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+input[type=checkbox]:before {
+    content: "";
+    width: 31px;    /*25*/
+    height: 31px;   /*18*/
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border: 3px solid #ff9800;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    background-color: #ffffff;
+  }
+  input[type=checkbox] {
+    width: 13px;
+    margin-right: 14px;
+    cursor: pointer;
+  }
+  .seats {
+    border: 1px solid red;
+    background: yellow;
+  }
+  input[type=checkbox]:checked:before {
+    background-color: Green;
+    font-size: 15px;
+  }
+  td {
+    width: 40px;
+    font-weight: 600;
+    font-size: 1em;
+    padding-top: 7px;
+    height: 24px;
+    color: #fff;
+  }
+  h2.wthree {
+    padding: 0.8em;
+    font-size: 1.2em;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 7px;
+    word-spacing: 10px;
+    text-align: center;
+  }
+  td {
+    width: 40px;
+    font-weight: 600;
+    font-size: 1em;
+    padding-top: 7px;
+    height: 24px;
+    color: #fff;
+  }
+  ul.seat_w3ls {
+    margin: 2em 0;
+  }
+  ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .smallBox::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .greenBox::before {
+    content: "";
+    background: Green;
+  }
+  .redBox::before {
+    content: "";
+    background: Red;
+  }
+  .screen {
+    max-width: fit-content;
+    background: #ff9800;
+    margin: auto;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .emptyBox::before {
+    content: "";
+    box-shadow: inset 0px 2px 3px 0px rgb(255, 152, 0), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    -moz-box-shadow: inset 0px 2px 3px 0px rgb(255, 152, 0), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    -webkit-box-shadow: inset 0px 2px 3px 0px rgb(255, 152, 0), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    background-color: #fff;
+  }
+  
+  .Displaytable td, .Displaytable th {
+    width: 100%;
+    padding: 7px 10px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+  }
+  .widthSeat{
+    width: 100%;
+  }
