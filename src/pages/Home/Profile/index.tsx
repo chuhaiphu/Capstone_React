@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import axios from "axios";
+import api from "../../../utils/apiUtils";
 
 const schema = yup.object({
   taiKhoan: yup.string().required("Vui lòng nhập tài khoản"),
@@ -19,18 +21,19 @@ export default function SignupPage() {
 
   const dispatch: any = useDispatch();
   const { loading, data, error } = useSelector(
-    (state: RootState) => state.signUpUserReducer
+    (state: RootState) => state.userReducer
   );
 
   const navigate = useNavigate();
   const { register, handleSubmit, formState } = useForm<any>({
     defaultValues: {
-      taiKhoan: "",
+      taiKhoan: data?.taiKhoan,
       matKhau: "",
-      email: "",
-      soDt: "",
-      maNhom: "GP01",
-      hoTen: "",
+      email: data?.email,
+      soDt: data?.soDT,
+      maNhom: data?.maNhom,
+      maLoaiNguoiDung: data?.maLoaiNguoiDung,
+      hoTen: data?.hoTen
     },
     resolver: yupResolver(schema),
     criteriaMode: "all",
@@ -41,7 +44,12 @@ export default function SignupPage() {
   }, [formState]);
 
   const onSubmit = (formValues: any) => {
-    navigate("/login");
+    api
+    .put(`/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, formValues)
+    .catch((error: any) => {
+        console.log(error)
+    })
+    navigate("/");
   };
 
 
@@ -85,12 +93,9 @@ export default function SignupPage() {
                   <label className="mt-2 ml-2" htmlFor="bal">I agree to the <a href="#0">Terms, Privacy Policy</a> and <a href="#0">Fees</a></label>
                 </div>
                 <div className="form-group text-center">
-                  <input type="submit" defaultValue="Sign Up" />
+                  <input type="submit" defaultValue="Confirm Update" />
                 </div>
               </form>
-              <div className="option">
-                Already have an account? <Link to={"/login"}>Login</Link>
-              </div>
             </div>
           </div>
         </div>
