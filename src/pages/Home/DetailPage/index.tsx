@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { RootState } from '../../../store';
 import { actFetchMovieDetail } from './duck/action';
 import dayjs from 'dayjs';
@@ -11,6 +11,7 @@ export default function DetailMovie() {
   const { id } = useParams();
 
   const dispatch: any = useDispatch();
+  const navigate = useNavigate();
 
   const { loading, data, error } = useSelector(
     (state: RootState) => state.movieDetailsReducer
@@ -25,6 +26,8 @@ export default function DetailMovie() {
   const cinemaSystems = data?.heThongRapChieu || [];
 
   if (loading) return <p>Loadinggg...</p>
+
+  const datve = (maLichChieu:string) => { navigate(`/seat-booking/${maLichChieu}`)}
 
   return (
     <div className=' container  '>
@@ -85,18 +88,20 @@ export default function DetailMovie() {
                         <div>
                           {item.tenCumRap}
                           <Row>
-                            {item.lichChieuPhim.map((item, index) => {
+                            {item.lichChieuPhim.map((item , index) => {
                               return (
                                 <Col sm={2}>
-                                  <Button
-                                    variant="primary"
-                                    key={`lich-chieu-${index}`}
-                                    className="mb-3"
-                                  >
-                                    {dayjs(item.ngayChieuGioChieu).format(
-                                      "DD/MM HH:mm"
-                                    )}
-                                  </Button>
+                                  
+                                    <Button onClick={() => datve(item.maLichChieu)}
+                                      variant="primary"
+                                      key={`lich-chieu-${index}`}
+                                      className="mb-3"
+                                    >
+                                      {dayjs(item.ngayChieuGioChieu).format(
+                                        "DD/MM HH:mm"
+                                      )}
+                                    </Button>
+                                 
                                 </Col>
                               )
 

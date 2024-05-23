@@ -1,3 +1,4 @@
+import { StartupSnapshot } from "v8";
 
 
 export type Movie = {
@@ -18,6 +19,12 @@ export type Movie = {
 export type  AppState<T> = {
     loading: boolean,
     data: T[] | null,
+    error : any,
+}
+
+export type  AppStateSeat<K> = {
+    loading: boolean,
+    data: K | null,
     error : any,
 }
 
@@ -80,4 +87,30 @@ export interface CurrentUser {
     maNhom: string;
     maLoaiNguoiDung: string;
     accessToken: string;
+}
+
+export interface DatveSeat {
+    thongTinPhim: thongTinPhim;
+    danhSachGhe: danhSachGhe[];
+    
+}
+export interface danhSachGhe {
+    maGhe: number,
+    tenGhe: string,
+    maRap: number,
+    loaiGhe: string,
+    stt: string,
+    taiKhoanNguoiDat: string,
+    giaVe: number,
+    datVe: boolean,
+}
+export interface thongTinPhim {
+    diaChi: string,
+    gioChieu: any,
+    hinhAnh :string,
+    maLichChieu: number,
+    ngayChieu: Date;
+    tenCumRap: string,
+    tenPhim: string,
+    tenRap: string,
 }
