@@ -10,20 +10,22 @@ import { danhSachGhe } from "../../../store/types";
 export default function SeatBooking() {
 
   const [selectedSeats, setSelectedSeats] = useState<any>([]);
+  const [totalPrice, setTotalPrice] = useState(0);
   // useEffect(() => {
   //   console.log(selectedSeats);
   // }, [selectedSeats]);
 
   const handleSelectSeat = (Ghe: any) => {
     const isSelected = selectedSeats.some((s: any) => s.tenGhe === Ghe.tenGhe);
-
+  
     if (isSelected) {
       setSelectedSeats(selectedSeats.filter((s: any) => s.tenGhe !== Ghe.tenGhe));
+      setTotalPrice(totalPrice - Ghe.giaVe);
     } else {
       setSelectedSeats([...selectedSeats, Ghe]);
+      setTotalPrice(totalPrice + Ghe.giaVe);
     }
-
-  }
+  };
 
   const handleConfirm = () => {
     // console.log(selectedSeats)
@@ -87,6 +89,7 @@ export default function SeatBooking() {
             <p>{data?.thongTinPhim.tenRap}</p>
             <p>Time :{data?.thongTinPhim.gioChieu}</p>
             <p> Số ghế : {handleConfirm()} </p>
+            <p>Tổng giá: {totalPrice}</p>
           </div>
         </div>
       </div>
